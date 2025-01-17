@@ -1,4 +1,6 @@
 import React from 'react';
+import { Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
+
 
 // About Section
 const About = () => {
@@ -30,6 +32,13 @@ const About = () => {
                 <li>Google Cybersecurity Professional Certificate, Google</li>
               </ul>
             </div>
+          <div>
+  <img 
+    src="https://raw.githubusercontent.com/dantealegria1/Portafolio/main/8007D2D9-8375-4B1F-83BE-23706F77B3B0_1_201_a.jpeg" 
+    alt="Me and my girlfriend" 
+    className="rounded-lg border-2 border-gray-300" />
+</div>
+
           </div>
         </div>
       </div>
@@ -157,4 +166,60 @@ const Skills = () => {
   );
 };
 
-export { About, Projects, Skills };
+const Contact = () => {
+  return (
+    <section id="contact" className="py-6">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-serif mb-8">Contact</h2>
+        <p className="text-lg mb-8">
+          Feel free to reach out to me via social media or check out my latest projects on GitHub!
+        </p>
+        <div className="flex gap-8 justify-center">
+          <a
+            href="https://x.com/DanteAlegria5"
+            className="text-3xl hover:text-blue-600 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter />
+          </a>
+          <a
+            href="https://instagram.com/dante_alegria/"
+            className="text-3xl hover:text-pink-600 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dante-alegria"
+            className="text-3xl hover:text-blue-800 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin />
+          </a>
+          <a
+            href="https://github.com/dantealegria1"
+            className="text-3xl hover:text-gray-800 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github />
+          </a>
+          <a
+            href="mailto:dante.romero18@gmail.com"
+            className="text-3xl hover:text-red-600 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Mail />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+export { About, Projects, Skills, Contact };

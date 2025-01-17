@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Code, Terminal, Github, Award, ExternalLink } from 'lucide-react';
 import './index.css';
-import { About, Projects, Skills } from './sections';
+import { About, Projects, Skills, Contact } from './sections';
 import { Link } from 'react-scroll';
 
 function App() {
@@ -164,6 +164,7 @@ function App() {
   <About darkMode={darkMode} />
 <Projects darkMode={darkMode} />
 <Skills darkMode={darkMode} />
+  <Contact darkMode={darkMode} />
 
     </div>
   );
