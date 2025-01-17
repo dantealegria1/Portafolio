@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Code, Terminal, Github, Award, ExternalLink } from 'lucide-react';
 import './index.css';
+import { About, Projects, Skills } from './sections';
+import { Link } from 'react-scroll';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -14,27 +16,66 @@ function App() {
       darkMode ? 'bg-[#1C1C1C] text-white' : 'bg-[#F5F5F5] text-slate-900'
     }`}>
       {/* Navigation */}
-      <nav className="max-w-6xl mx-auto p-6 flex justify-between items-center">
-        <div className={`w-10 h-10 border flex items-center justify-center ${
-          darkMode ? 'border-white' : 'border-slate-900'
-        }`}>
-          <span className="font-serif">DA</span>
-        </div>
-        
-        <div className="flex gap-8">
-          <a href="#about" className="hover:text-gray-400 transition-colors">About</a>
-          <a href="#projects" className="hover:text-gray-400 transition-colors">Projects</a>
-          <a href="#skills" className="hover:text-gray-400 transition-colors">Skills</a>
-          <a href="#uses" className="hover:text-gray-400 transition-colors">Uses</a>
-          <a href="#contact" className="hover:text-gray-400 transition-colors">Contact</a>
-          <button onClick={toggleDarkMode} aria-label="Toggle theme">
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </div>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300 ${
+  darkMode ? 'bg-[#1C1C1C] border-gray-800 text-white' : 'bg-[#F5F5F5] border-gray-100 text-slate-900'
+}`}>
+  <div className="max-w-6xl mx-auto p-6 flex justify-between items-center">
+    <div className={`w-10 h-10 border flex items-center justify-center ${
+      darkMode ? 'border-white' : 'border-slate-900'
+    }`}>
+      <span className="font-serif">DA</span>
+    </div>
+    
+    <div className="flex gap-8">
+  <Link 
+    to="about"
+    spy={true}
+    smooth={true}
+    offset={-70} // Adjusts for navbar height
+    duration={500} // Scroll duration in ms
+    className="cursor-pointer hover:text-gray-400 transition-colors"
+  >
+    About
+  </Link>
+  <Link 
+    to="projects"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
+    className="cursor-pointer hover:text-gray-400 transition-colors"
+  >
+    Projects
+  </Link>
+  <Link 
+    to="skills"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
+    className="cursor-pointer hover:text-gray-400 transition-colors"
+  >
+    Skills
+  </Link>
+  <Link 
+    to="contact"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
+    className="cursor-pointer hover:text-gray-400 transition-colors"
+  >
+    Contact
+  </Link>
+  <button onClick={toggleDarkMode} aria-label="Toggle theme">
+    {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+  </button>
+</div>
+  </div>
       </nav>
 
       {/* Hero Section */}
-      <main className="max-w-6xl mx-auto px-6 py-24">
+      <main className="max-w-6xl mx-auto px-6 py-24 mt-8">
         <h1 className="text-6xl font-serif mb-6">Hello I'm Dante Alegria</h1>
         <p className={`text-xl mb-8 ${
           darkMode ? 'text-gray-300' : 'text-gray-700'
@@ -120,9 +161,14 @@ function App() {
           } transition-colors`}>Blog</a>
         </div>
       </main>
+  <About darkMode={darkMode} />
+<Projects darkMode={darkMode} />
+<Skills darkMode={darkMode} />
+
     </div>
   );
 }
+
 
 export default App;
 
